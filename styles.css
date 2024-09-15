@@ -1,56 +1,119 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Bebas+Neue&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Fondo negro */
-    color: white; /* Texto blanco */
+    background-color: #000;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px;
-    text-align: center;
 }
 
 h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #d721ce; /* Color violeta */
+    text-align: center;
     margin-bottom: 20px;
+    font-size: 3em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 
+        0 0 5px #6a0dad, 
+        0 0 10px #6a0dad, 
+        0 0 15px #6a0dad, 
+        0 0 20px #6a0dad, 
+        0 0 30px #6a0dad, 
+        0 0 40px #6a0dad, 
+        0 0 50px #6a0dad; /* Efecto de neón violeta */
+    padding: 10px;
+    background-color: #000; /* Fondo negro para el título */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #000; /* Fondo negro para la tabla */
 }
 
 th, td {
-    border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    color: white;
+    border: 1px solid #444;
 }
 
 th {
-    background-color: #6a0dad; /* Violeta oscuro para cabecera */
-    color: white;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+td {
+    background-color: #222;
+    vertical-align: top;
+    position: relative;
+    padding: 10px;
+}
+
+/* Estilo de borde neón para cada curso */
+.course-philosophy {
+    border-left: 5px solid #FFB6C1; /* Rosa claro */
+    box-shadow: 0 0 10px #FFB6C1; /* Efecto de neón rosa claro */
+}
+
+.course-mathematics {
+    border-left: 5px solid #ADD8E6; /* Azul claro */
+    box-shadow: 0 0 10px #ADD8E6; /* Efecto de neón azul claro */
+}
+
+.course-mathematics-discrete {
+    border-left: 5px solid #98FB98; /* Verde claro */
+    box-shadow: 0 0 10px #98FB98; /* Efecto de neón verde claro */
+}
+
+.course-physics {
+    border-left: 5px solid #FFD700; /* Amarillo */
+    box-shadow: 0 0 10px #FFD700; /* Efecto de neón amarillo */
+}
+
+.course-national-international {
+    border-left: 5px solid #FF6347; /* Tomate */
+    box-shadow: 0 0 10px #FF6347; /* Efecto de neón tomate */
+}
+
+.course-programming {
+    border-left: 5px solid #DDA0DD; /* Lila claro */
+    box-shadow: 0 0 10px #DDA0DD; /* Efecto de neón lila claro */
+}
+
+.course-ecology {
+    border-left: 5px solid #90EE90; /* Verde pálido */
+    box-shadow: 0 0 10px #90EE90; /* Efecto de neón verde pálido */
+}
+
+.course-accounting {
+    border-left: 5px solid #FFA07A; /* Salmón claro */
+    box-shadow: 0 0 10px #FFA07A; /* Efecto de neón salmón claro */
 }
 
 .classroom {
-    background-color: #8a2be2; /* Violeta medio para las celdas */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
 }
 
 .classroom:hover {
-    background-color: #dda0dd; /* Violeta claro al pasar el ratón */
-    color: white;
+    background-color: #6a0dad; /* Color violeta */
+    color: #fff;
+    transform: scale(1.05);
 }
 
-.classroom.dim {
-    opacity: 0.3; /* Atenúa las celdas no seleccionadas */
+.classroom:hover ~ .classroom[data-room]:not([data-room="Aula 1"]) {
+    opacity: 0.5; /* Atenuar otras aulas */
+}
+
+.classroom[data-room]:not(.hovered) {
+    opacity: 0.5; /* Atenuar otras aulas por defecto */
 }
