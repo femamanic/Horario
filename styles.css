@@ -100,6 +100,8 @@ td {
     box-shadow: 0 0 10px #FFA07A; /* Efecto de neón salmón claro */
 }
 
+/* Otros estilos previos */
+
 .classroom {
     transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
 }
@@ -107,13 +109,20 @@ td {
 .classroom:hover {
     background-color: #6a0dad; /* Color violeta */
     color: #fff;
-    transform: scale(1.05);
-}
-
-.classroom:hover ~ .classroom[data-room]:not([data-room="Aula 1"]) {
-    opacity: 0.5; /* Atenuar otras aulas */
+    transform: scale(1.09);
 }
 
 .classroom[data-room]:not(.hovered) {
     opacity: 0.5; /* Atenuar otras aulas por defecto */
+}
+
+/* NUEVAS CLASES PARA RESALTAR POR CURSO */
+.classroom.hovered {
+    background-color: #6a0dad; /* Color violeta cuando está resaltado */
+    color: #fff;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.classroom.dimmed {
+    opacity: 0.5; /* Atenúa las otras celdas */
 }
